@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hours to seconds</title>
+    <style>
+        body{
+            font-family: 'Courier New', Courier, monospace;
+            background-color: black;
+            color: aqua;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        input{
+            background-color: rgb(44, 89, 92);
+            font-size: xx-large;
+            color: aqua;
+            width: 50%;
+            margin: 10px;
+            border-radius: 7px;
+        }
+        #answer{
+            color: brown;
+        }
+    </style>
+</head>
+<body>
+    <h1>hours to seconds conventer</h1>
+    <h2>set time to convert to seconds</h2>
+    <form>
+        <label >hours:</label>
+        <input  id="hours" type="number" min="0" ><br>
+        <label >minutes:</label>
+        <input  id="minutes" type="number" min="0" max="60" ><br>
+        <label >seconds:</label>
+        <input  id="seconds" type="number" min="0" max="60" ><br>
+        
+    </form>
+
+    <h2 id="answer"></h2>
+
+
+    <script>
+        function convert(){
+            let hours = document.getElementById("hours").value;
+            let minutes = document.getElementById("minutes").value;
+            let seconds = document.getElementById("seconds").value;
+
+            let result = (hours * 3600) + (minutes * 60) + (seconds * 1);
+            document.getElementById("answer").innerHTML = "answer: " + result + " seconds";
+        }
+        setInterval(convert, 500);
+    </script>
+
+
+</body>
+</html>
